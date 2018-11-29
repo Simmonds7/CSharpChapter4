@@ -34,23 +34,23 @@ namespace FahrenheitToCelsius
             output12 = (input12 - 32) * 5/9;
             output5 = (input5 - 32) * 5/9;
 
-            if (output8 <= 32)
+            if (input8 <= 32)
                 lblOutput8.Text = "It is freezing. " + Math.Round(output8, 2) + "C°";
-            else if (output8 >= 100)
+            else if (input8 >= 100)
                 lblOutput8.Text = "It is Hot out. " + Math.Round(output8, 2) + "C°";
             else
                 lblOutput8.Text = "It is " + Math.Round(output8, 2) + "C°";
 
-            if (output12 < 32)
+            if (input12 < 32)
                 lblOutput12.Text = "It is freezing." + Math.Round(output12, 2) + "C°";
-            else if (output12 > 100)
+            else if (input12 > 100)
                 lblOutput12.Text = "It is Hot out." + Math.Round(output12, 2) + "C°";
             else
                 lblOutput12.Text = "It is " + Math.Round(output12, 2) + "C° outside.";
 
-            if (output5 < 32)
+            if (input5 < 32)
                 lblOutput5.Text = "It is freezing." + Math.Round(output5, 2) + "C°";
-            else if (output5 > 100)
+            else if (input5 > 100)
                 lblOutput5.Text = "It is Hot out." + Math.Round(output5, 2) + "C°";
             else
                 lblOutput5.Text = "It is " + Math.Round(output5, 2) + "C°";
@@ -68,35 +68,35 @@ namespace FahrenheitToCelsius
             input12 = Convert.ToDouble(txtInput12.Text);
             input5 = Convert.ToDouble(txtInput5.Text);
 
-            output8 = (input8 - 32) * 5 / 9;
-            output12 = (input12 - 32) * 5 / 9;
-            output5 = (input5 - 32) * 5 / 9;
+            output8 = (input8 * 1.8) + 32;
+            output12 = (input12 * 1.8) + 32;
+            output5 = (input5 * 1.8) + 32;
 
             if (output8 <= 32)
-                lblOutput8.Text = "It is freezing. " + Math.Round(output8, 2) + "C°";
+                lblOutput8.Text = "It is freezing. " + Math.Round(output8, 2) + "F°";
             else if (output8 >= 100)
-                lblOutput8.Text = "It is Hot out. " + Math.Round(output8, 2) + "C°";
+                lblOutput8.Text = "It is Hot out. " + Math.Round(output8, 2) + "F°";
             else
-                lblOutput8.Text = "It is " + Math.Round(output8, 2) + "C°";
+                lblOutput8.Text = "It is " + Math.Round(output8, 2) + "F°";
 
             if (output12 < 32)
-                lblOutput12.Text = "It is freezing." + Math.Round(output12, 2) + "C°";
+                lblOutput12.Text = "It is freezing." + Math.Round(output12, 2) + "F°";
             else if (output12 > 100)
-                lblOutput12.Text = "It is Hot out." + Math.Round(output12, 2) + "C°";
+                lblOutput12.Text = "It is Hot out." + Math.Round(output12, 2) + "F°";
             else
-                lblOutput12.Text = "It is " + Math.Round(output12, 2) + "C° outside.";
+                lblOutput12.Text = "It is " + Math.Round(output12, 2) + "F° outside.";
 
             if (output5 < 32)
-                lblOutput5.Text = "It is freezing." + Math.Round(output5, 2) + "C°";
+                lblOutput5.Text = "It is freezing." + Math.Round(output5, 2) + "F°";
             else if (output5 > 100)
-                lblOutput5.Text = "It is Hot out." + Math.Round(output5, 2) + "C°";
+                lblOutput5.Text = "It is Hot out." + Math.Round(output5, 2) + "F°";
             else
-                lblOutput5.Text = "It is " + Math.Round(output5, 2) + "C°";
+                lblOutput5.Text = "It is " + Math.Round(output5, 2) + "F°";
 
-            pictFormulaCelsius.Visible = false;
-            pictFormulaFahrenheit.Visible = true;
-            lblInput.Text = "Fahrenheit";
-            lblOutput.Text = "Celsius";
+            pictFormulaCelsius.Visible = true;
+            pictFormulaFahrenheit.Visible = false;
+            lblInput.Text = "Celsius";
+            lblOutput.Text = "Fahrenheit";
         }
     }
 }
